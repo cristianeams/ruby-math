@@ -1,5 +1,5 @@
 require './player'
-require './questions'
+require './question'
 
 # Start game
 def start_game
@@ -20,12 +20,12 @@ def do_math
     if @turn != 1
       puts "--- 🆕 TURN ---"
     end
-    question = Questions.new # instance of new question
+    question = Question.new # instance of new question
     puts "Player 1: #{question.show}"
     print "> " # new line
     answer = gets.chomp.to_i
     if answer == question.answer
-      puts "Player 1: 👊 Yas!You are 💯% right!"
+      puts "Player 1: 👊 Yas!You are 💯 % right!"
       puts "P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3"
     else 
       @player1.lives -= 1 # lose a life if mis-answer a question
@@ -35,12 +35,12 @@ def do_math
     do_math
   elsif @turn.even? && @player1.is_alive? && @player2.is_alive?
     puts"--- 🆕 TURN ---"
-    question = Questions.new 
+    question = Question.new 
     puts "Player 2: #{question.show}"
     print "> "
     answer = gets.chomp.to_i
     if answer == question.answer
-      puts "Player 2: 👊 Yas!You are 💯% right!"
+      puts "Player 2: 👊 Yas!You are 💯 % right!"
       puts "P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3"
     else 
       @player2.lives -= 1
