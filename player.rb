@@ -1,8 +1,7 @@
 class Player
-  attr_accessor :name, :lives
-  def initialize(name)
-    @name = name
-    @lives = 3 #both players start with 3 lives
+  attr_accessor :lives
+  def initialize (lives = 3) #both players start with 3 lives
+    @lives = lives 
   end
 
   def is_alive?
